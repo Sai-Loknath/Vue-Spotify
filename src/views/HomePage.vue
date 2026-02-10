@@ -1,5 +1,9 @@
 <template>
   <div class="home-page">
+    <div v-if="!isloggedIn" class="login-page">
+      <Login />
+    </div>
+    <div v-else>
     <div class="container1">
       <container1 />
     </div>
@@ -16,6 +20,7 @@
     <Playlists />
     </div>
   </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -24,14 +29,17 @@ import container2 from "./container2.vue";
 import MusicPlayer from "./MusicPlayer.vue";
 import Playlists from "./Playlists.vue";
 import Queue from "./Queue.vue";
+import Login from "./LoginPage.vue";
+
+const isloggedIn = true;
 </script>
 
 <style>
 .home-page {
-position: relative;   /* THIS is the key */
+position: relative;  
   width: 100%;
   height: 100%;
-  background: white;
+  background: rgb(207, 222, 219);
 
 
 }
@@ -88,5 +96,15 @@ position: relative;   /* THIS is the key */
   height: 80px;
   background-color: rgb(219, 157, 157);
    border-radius: 12px;
+}
+.login-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(500px, 30vw, 500px);
+  height: clamp(320px, 45vh, 520px);
+
+  border-radius: 12px;
 }
 </style>
