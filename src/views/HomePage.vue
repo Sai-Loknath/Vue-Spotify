@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <div v-if="!isloggedIn" class="login-page">
+    <div v-if="isloggedIn" class="login-page">
       <Login />
     </div>
     <div v-else>
