@@ -5,10 +5,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { useStore } from 'vuex';
+
+const store=useStore();
+
 const handleLogin = () => {
-  // Simulate login action
-  alert("Login successful! Redirecting to home page...");
+  store.dispatch('auth/login')
 };
 </script>
 

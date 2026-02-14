@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup >
 import container1 from "./container1.vue";
 import container2 from "./container2.vue";
 import MusicPlayer from "./MusicPlayer.vue";
